@@ -38,13 +38,13 @@ const Features = () => {
   return (
     <section className="bg-gray-50 py-20">
       <div className="mx-auto max-w-7xl px-6">
+
         <h2 className="mb-4 text-center text-4xl font-bold text-gray-900">
           Everything You Need to Study Smarter
         </h2>
 
         <p className="mx-auto mb-14 max-w-2xl text-center text-gray-600">
-          Powerful AI tools designed to help students prepare for exams with
-          confidence.
+          Powerful AI tools designed to help students prepare for exams with confidence.
         </p>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -57,6 +57,7 @@ const Features = () => {
             />
           ))}
         </div>
+
       </div>
     </section>
   );
