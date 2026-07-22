@@ -1,6 +1,6 @@
-function FeatureCard({ icon, title, description }) {
+const FeatureCard = ({ icon, title, description }) => {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+    <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
       <div className="mb-5 text-5xl text-blue-600">
         {icon}
       </div>
@@ -14,6 +14,6 @@ function FeatureCard({ icon, title, description }) {
       </p>
     </div>
   );
-}
+};
 
 export default FeatureCard;
