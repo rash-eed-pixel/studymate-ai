@@ -1,15 +1,53 @@
-const FeatureCard = ({ icon, title, description }) => {
+// -----------------------------------------------------------------------------
+// Component: FeatureCard
+// Description:
+// Reusable feature card for StudyMate AI.
+// -----------------------------------------------------------------------------
+
+const FeatureCard = ({ icon: Icon, title, description }) => {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2">
-      <div className="mb-5 text-5xl text-blue-600">
-        {icon}
+    <div
+      className="
+        group
+        h-full
+        rounded-3xl
+        border
+        border-gray-200
+        bg-white
+        p-8
+        shadow-sm
+        transition-all
+        duration-300
+        hover:-translate-y-3
+        hover:border-blue-200
+        hover:shadow-2xl
+      "
+    >
+      <div
+        className="
+          mb-6
+          flex
+          h-16
+          w-16
+          items-center
+          justify-center
+          rounded-2xl
+          bg-blue-100
+          text-3xl
+          text-blue-600
+          transition-all
+          group-hover:bg-blue-600
+          group-hover:text-white
+        "
+      >
+        <Icon />
       </div>
 
-      <h3 className="mb-3 text-2xl font-bold text-gray-900">
+      <h3 className="mb-4 text-2xl font-bold text-gray-900">
         {title}
       </h3>
 
-      <p className="leading-7 text-gray-600">
+      <p className="leading-8 text-gray-600">
         {description}
       </p>
     </div>

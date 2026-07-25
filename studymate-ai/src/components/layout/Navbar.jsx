@@ -1,41 +1,43 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <nav className="w-full border-b border-gray-200 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <div>
-          <h1 className="text-2xl font-bold text-blue-600">
-            StudyMate AI
-          </h1>
-        </div>
+    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+        <Link
+          to="/"
+          className="text-3xl font-extrabold text-blue-600"
+        >
+          StudyMate AI
+        </Link>
 
-        {/* Navigation */}
-        <div className="hidden gap-8 md:flex">
-          <Link to="/" className="text-gray-700 hover:text-blue-600">
-            Home
-          </Link>
-
-          <Link to="/" className="text-gray-700 hover:text-blue-600">
+        <nav className="hidden items-center gap-10 font-medium text-gray-700 md:flex">
+          <a href="#features" className="hover:text-blue-600">
             Features
-          </Link>
+          </a>
 
-          <Link to="/" className="text-gray-700 hover:text-blue-600">
-            About
-          </Link>
-        </div>
+          <a href="#how" className="hover:text-blue-600">
+            How it Works
+          </a>
 
-        {/* Login Button */}
+          <a href="#reviews" className="hover:text-blue-600">
+            Reviews
+          </a>
+
+          <a href="#contact" className="hover:text-blue-600">
+            Contact
+          </a>
+        </nav>
+
         <Link
           to="/login"
-          className="rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
+          className="rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
         >
           Login
         </Link>
       </div>
-    </nav>
+    </header>
   );
-}
+};
 
 export default Navbar;

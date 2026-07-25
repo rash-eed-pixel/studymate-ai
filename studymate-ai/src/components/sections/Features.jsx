@@ -1,61 +1,77 @@
-import {
-  FaRobot,
-  FaBookOpen,
-  FaClipboardList,
-  FaCalendarAlt,
-} from "react-icons/fa";
+// -----------------------------------------------------------------------------
+// Component: Features
+// Description:
+// Displays the core AI-powered features of StudyMate AI.
+// -----------------------------------------------------------------------------
+// Author: Rasheed Abubakar
+// Project: StudyMate AI | 3MTT NextGen Knowledge Showcase
+// -----------------------------------------------------------------------------
 
+import { motion } from "framer-motion";
+import features from "../../data/features";
 import FeatureCard from "../ui/FeatureCard";
 
 const Features = () => {
-  const features = [
-    {
-      icon: <FaRobot />,
-      title: "AI Tutor",
-      description:
-        "Ask questions and receive step-by-step explanations powered by AI.",
-    },
-    {
-      icon: <FaClipboardList />,
-      title: "Quiz Generator",
-      description:
-        "Generate unlimited quizzes to test your understanding.",
-    },
-    {
-      icon: <FaBookOpen />,
-      title: "Smart Notes",
-      description:
-        "Summarize long notes into short, easy-to-review study points.",
-    },
-    {
-      icon: <FaCalendarAlt />,
-      title: "Study Planner",
-      description:
-        "Plan your daily study sessions and stay on track.",
-    },
-  ];
-
   return (
-    <section className="bg-gray-50 py-20">
+    <section
+      id="features"
+      className="bg-slate-50 py-24"
+    >
       <div className="mx-auto max-w-7xl px-6">
 
-        <h2 className="mb-4 text-center text-4xl font-bold text-gray-900">
-          Everything You Need to Study Smarter
-        </h2>
+        {/* Heading */}
 
-        <p className="mx-auto mb-14 max-w-2xl text-center text-gray-600">
-          Powerful AI tools designed to help students prepare for exams with confidence.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .5 }}
+          className="mx-auto mb-20 max-w-3xl text-center"
+        >
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <FeatureCard
+          <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+            FEATURES
+          </span>
+
+          <h2 className="mt-6 text-4xl font-extrabold text-gray-900 md:text-5xl">
+            Everything You Need
+            <span className="block text-blue-600">
+              To Study Smarter
+            </span>
+          </h2>
+
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            StudyMate AI combines Artificial Intelligence,
+            quizzes, smart notes and personalized planning
+            to help students prepare confidently for
+            WAEC, NECO, JAMB and university examinations.
+          </p>
+
+        </motion.div>
+
+        {/* Cards */}
+
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+          {features.map((feature, index) => (
+
+            <motion.div
               key={feature.title}
-              icon={feature.icon}
-              title={feature.title}
-              description={feature.description}
-            />
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: .4,
+                delay: index * .15,
+              }}
+            >
+
+              <FeatureCard {...feature} />
+
+            </motion.div>
+
           ))}
+
         </div>
 
       </div>
