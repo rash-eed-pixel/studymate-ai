@@ -20,4 +20,4 @@ const SectionTitle = ({ title, subtitle }) => {
   );
 };
 
-export default SectionTitle;
+export default SectionTitle;das

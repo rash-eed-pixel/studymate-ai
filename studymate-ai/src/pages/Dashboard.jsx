@@ -1,29 +1,42 @@
-import DashboardLayout from "../components/dashboard/DashboardLayout";
+import DashboardSidebar from "../components/dashboard/DashboardSidebar";
+import Topbar from "../components/dashboard/Topbar";
+import WelcomeCard from "../components/dashboard/WelcomeCard";
+import StatsCard from "../components/dashboard/StatsCard";
 import QuickAction from "../components/dashboard/QuickAction";
-import quickActions from "../data/quickActions";
+import DashboardHeader from "../components/dashboard/DashboardHeader";
+import DashboardLayout from "../components/dashboard/DashBoardLayout";
+import { BookOpen } from "lucide-react";
 
 const Dashboard = () => {
   return (
-    <DashboardLayout>
-      <div className="mb-10">
-        <h2 className="text-4xl font-bold">
-          Welcome Back 👋
-        </h2>
+    <div className="flex min-h-screen bg-slate-100">
 
-        <p className="mt-3 text-gray-600">
-          Continue learning with AI-powered study tools.
-        </p>
-      </div>
+      <DashboardSidebar />
 
-      <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-        {quickActions.map((action) => (
+      <div className="flex-1">
+
+        
+
+        <div className="space-y-6 p-8">
+
+          <WelcomeCard />
+
+          <StatsCard />
+
           <QuickAction
-            key={action.title}
-            {...action}
-          />
-        ))}
+    title="Generate Quiz"
+    subtitle="Create AI-powered quizzes"
+    icon={BookOpen}
+    color="bg-blue-600"
+    path="/quiz"
+/>
+
+
+        </div>
+
       </div>
-    </DashboardLayout>
+
+    </div>
   );
 };
 

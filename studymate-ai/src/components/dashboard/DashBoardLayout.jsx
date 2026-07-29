@@ -4,7 +4,7 @@
 // Shared layout for dashboard pages.
 // -----------------------------------------------------------------------------
 
-import DashboardHeader from "./DashboardHeader";
+import DashboardHeader from "./Dashboardheader";
 import DashboardSidebar from "./DashboardSidebar";
 
 const DashboardLayout = ({ children }) => {

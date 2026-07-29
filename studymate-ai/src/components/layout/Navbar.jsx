@@ -10,6 +10,9 @@ const Navbar = () => {
         >
           StudyMate AI
         </Link>
+        <Link to="/dashboard">
+  Dashboard
+</Link>
 
         <nav className="hidden items-center gap-10 font-medium text-gray-700 md:flex">
           <a href="#features" className="hover:text-blue-600">
@@ -35,6 +38,7 @@ const Navbar = () => {
         >
           Login
         </Link>
+        <Link to="/chat">AI Tutor</Link>
       </div>
     </header>
   );
