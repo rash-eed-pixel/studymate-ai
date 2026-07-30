@@ -2,10 +2,8 @@ import React, { useState } from "react";
 
 // Dynamic API Base URL setup for production and local development
 const API_BASE_URL = 
-  import.meta.env?.VITE_API_URL || 
-  process.env?.REACT_APP_API_URL || 
+  (typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL) || 
   "http://localhost:5000";
-
 export default function App() {
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
