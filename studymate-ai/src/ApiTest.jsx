@@ -16,11 +16,11 @@ export default function ApiTest() {
     formData.append("prompt", prompt);
 
     try {
-      const res = await fetch("http://localhost:5000/api/study", {
-        method: "POST",
-        body: formData,
-      });
-
+      const response = await fetch('/api/study', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+});
       const data = await res.json();
 
       if (!res.ok) {
