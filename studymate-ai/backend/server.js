@@ -10,6 +10,7 @@ import authRoutes from "./routes/auth.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 // Trust reverse proxy (required for hosting platforms like Render, Railway, Vercel)
 app.set("trust proxy", 1);
@@ -305,3 +306,5 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`🤖 Active fallback model chain: ${MODEL_LIST.join(" -> ")}`);
 });
+// Ensure this line is at the end of server.js so Vercel can run it as a serverless function:
+module.exports = app;
