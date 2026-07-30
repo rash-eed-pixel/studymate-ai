@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+// Dynamic API Base URL setup for production and local development
+const API_BASE_URL = 
+  import.meta.env?.VITE_API_URL || 
+  process.env?.REACT_APP_API_URL || 
+  "http://localhost:5000";
+
 export default function App() {
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,7 +38,7 @@ export default function App() {
 
     try {
       const endpoint = authMode === "login" ? "/api/auth/login" : "/api/auth/register";
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+      const res = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -80,7 +86,7 @@ export default function App() {
     if (pdfFile) formData.append("pdf", pdfFile);
 
     try {
-      const res = await fetch("http://localhost:5000/api/study", {
+      const res = await fetch(`${API_BASE_URL}/api/study`, {
         method: "POST",
         body: formData,
       });
