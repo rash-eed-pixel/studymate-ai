@@ -2,9 +2,11 @@ import React, { useState } from "react";
 
 // Dynamic API Base URL setup for production and local development
 // ✅ Dynamic Base URL: use empty string in production so requests hit relative paths (/api/...)
+// Dynamic API Base URL setup for production and local development
 const API_BASE_URL = 
-  (typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL) || 
-  (typeof window !== "undefined" && window.location.hostname === "localhost" ? "http://localhost:5000" : "");
+  (typeof window !== "undefined" && window.location.hostname === "localhost")
+    ? "http://localhost:5000"
+    : "";
 export default function App() {
   // Authentication State
   const [isAuthenticated, setIsAuthenticated] = useState(false);
